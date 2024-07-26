@@ -2,14 +2,14 @@
     "name": "Mikthon",
     "description": "User bot for telegram !",
     "stack": "container",
-    "logo": "https://graph.org/file/41cc2350b500c3ff3b387.jpg",
-    "repository": "https://github.com/eooe31/wwn",
+    "logo": "https://graph.org/file/2f494f3c2cf45f2af1750.jpg",
+    "repository": "https://github.com/Mikthon/Mikthon0",
     "keywords": [
         "python",
         "chatbot",
         "telegrambot"
     ],
-    "website": "https://github.com/eooe31/wwn",
+    "website": "https://github.com/Mikthon/Mikthon0",
     "env": {
         "API_ID": {
             "description": "ايبي ايدي",

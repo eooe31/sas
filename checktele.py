@@ -51,6 +51,25 @@ def check_user(username):
 
 
 def gen_user(choice):
+    if choice == "سداسي حرفين":
+        c = d = random.choices(e)
+        d = random.choices(a)
+        f = [c[0], d[0], c[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
+
+    elif choice == "ثلاثي":
+        c = random.choices(a)
+        d = random.choices(e)
+        s = random.choices(e)
+        f = [c[0], "_", d[0], "_", s[0]]
+        username = "".join(f)
+    elif choice == "سداسيات":
+        c = d = random.choices(a)
+        d = random.choices(e)
+        f = [c[0], c[0], c[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
     elif choice == "بوتات":
         c = random.choices(a)
         d = random.choices(e)
@@ -60,26 +79,8 @@ def gen_user(choice):
         username = "".join(f)
         username = username + "bot"
 
-    elif choice == "بوت":
+    elif choice == "خماسي حرفين":
         c = random.choices(a)
-        d = random.choices("B")
-        s = random.choices(e)
-        f = [c[0], s[0], d[0], "BOT"[0]]
-        username = "".join(f)
-    elif choice == "اليش":
-        c = random.choices(a)
-        d = random.choices(a)
-        s = random.choices(b)
-        f = [c[0], e[0], e[0], "Bot"[0]]
-    elif choice == "مايو":
-        c = random.choices(a)
-        d = random.choices(b)
-        s = random.choices(a)
-        f = [c[0], e[0], d[0], "Bot"[0]]
-        username = "".join(f) 
-
-    elif choice == "خمس":
-        c = random.choices(e)
         d = random.choices(e)
 
         f = [c[0], d[0], c[0], c[0], d[0]]
@@ -89,21 +90,21 @@ def gen_user(choice):
     elif choice == "خماسي":
         c = d = random.choices(a)
         d = random.choices(b)
-        f = [c[0], c[0], c[0], d[0], d[0], d[0]]
+        f = [c[0], c[0], c[0], c[0], d[0]]
         random.shuffle(f)
         username = "".join(f)
 
-    elif choice == "خير":
-        c = random.choices(a)
-        d = random.choices(a)
-        s = random.choices(b)
-        f = [c[0], "_", d[0], "_", s[0]]
+    elif choice == "سباعيات":
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], c[0], c[0], c[0], d[0], c[0], c[0]]
+        random.shuffle(f)
         username = "".join(f)
-    elif choice == "ثلاثي":
-        c = random.choices(a)
-        d = random.choices(e)
-        s = random.choices(e)
-        f = [c[0], "_", d[0], "_", s[0]]
+    elif choice == "تيست":
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], c[0], c[0]]
+        random.shuffle(f)
         username = "".join(f)
     else:
         return "error"
@@ -116,33 +117,19 @@ async def _(event):
         '''
 **-- -- -- -- -- -- -- -- --
  الانواع :
- 	
- بوتات
-
+ ثلاثي
  -- -- -- -- - 
- بوت. 
- RSBBOT
- -- -- -- -- - 
- مايو 
- S65BOT
+ سداسي حرفين
  -- -- -- -- -- -- -- -- -- -- --
-  اليش
-  SZZBOT
+  سداسيات
  -- -- -- -- -- 
-  نص
-  s_5_x
-
+  بوتات
  -- -- -- -- --
-  خير
- s_x_6
- -- -- -- -- - 
  خماسي
- s999ss
  -- -- -- -- -- 
- خمس
- sssxx
- 
- ثلاثي 
+ خماسي حرفين
+ -- -- -- -- -- 
+ سباعيات
  -- -- -- -- -- 
    طريقه الصيد هيه كالتالي
  - .صيد + نوع الصيد تكتب الاسم 
@@ -157,7 +144,7 @@ async def _(event):
  الامر:   `.حالة الصيد`
  • لمعرفة عدد المحاولات للصيد
 
- @wwwwn**
+ @mikthon**
 
 '''
     )
@@ -182,8 +169,8 @@ async def hunterusername(event):
         try:
             ch = await eighthon(
                 functions.channels.CreateChannelRequest(
-                    title="صيد يوزرات ",
-                    about="تم الصيد بيبي ",
+                    title="MIKTHON HUNTER",
+                    about="This channel to hunt username by - @eighthon ",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -208,8 +195,8 @@ async def hunterusername(event):
                     )
                 )
                 await event.client.send_message(
-                    "@wwwwn",
-                    f"⌯ تم الصيد !'𓆪\n⎱ UserName: ↣ (@{username}❳!\n⎱ Hunting Log {trys2[0]}\n⎱ by ",
+                    event.chat_id,
+                    f"⌯ 𓆩 We are the strongest !'𓆪\n⎱ UserName: ↣ (@{username}❳!\n⎱ Hunting Log {trys2[0]}\n⎱ by : @M_B_U",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -239,7 +226,7 @@ async def hunterusername(event):
         trys[0] += 1
     isclaim.clear()
     isclaim.append("off")
-    await event.client.send_message(event.chat_id, "**- تم الصيد  **")
+    await event.client.send_message(event.chat_id, "**- تم بنجاح الانتهاء من الصيد**")
 
 
 @eighthon.on(events.NewMessage(outgoing=True, pattern=r"\.تثبيت"))
@@ -252,8 +239,8 @@ async def _(event):
         try:
             ch = await eighthon(
                 functions.channels.CreateChannelRequest(
-                    title="صيد يوزرات ",
-                    about="تم الصيد ",
+                    title="MIKTHON HUNTER - صيد مكثون",
+                    about="This channel to hunt username by - @mikthon ",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -277,7 +264,7 @@ async def _(event):
                 )
                 await event.client.send_message(
                     event.chat_id,
-                    f"- Done : @{username} !\n-  !\n- Hunting Log {trys2[0]}",
+                    f"- Done : @{username} !\n- By : @M_B_U !\n- Hunting Log {trys2[0]}",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -358,9 +345,11 @@ async def _(event):
                         await eighthon(functions.channels.UpdateUsernameRequest(
                             channel=ch, username=username))
                         await event.client.send_message(event.chat_id, f'''** 
-𝙷𝚄𝙽𝚃𝙸𝙽𝙶 (@{username})
-× ᴄʟɪᴄᴋs ↬  {trys}
-lD: @Max985 / @P8_PP × @HFFHH **
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @M_B_U **
     ''')
                         break
                     except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -391,8 +380,11 @@ lD: @Max985 / @P8_PP × @HFFHH **
                 await eighthon(functions.channels.UpdateUsernameRequest(
                     channel=ch, username=username))
                 await event.client.send_message(event.chat_id, f'''**
-𝙷𝚄𝙽𝚃𝙸𝙽𝙶 (@{username})
-× ᴄʟɪᴄᴋs ↬  {trys}
+⌯ We are the strongest !'
+
+⎱ UserName: ↣ (@{username}❳!
+
+⎱ by : @M_B_U
 -- -- -- -- -- -- -- -- -- -- -- -- -- **
     ''')
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
